@@ -127,7 +127,7 @@ void main(){
   let mouse      = [0.5, 0.5];
   let target     = [0.5, 0.5];
   let nextClick  = 1.0;
-  let pulseOn    = true;
+  let pulseOn    = localStorage.getItem('pulseOn') !== 'false';
 
   // Pulse toggle button
   const btn = document.createElement('button');
@@ -145,11 +145,19 @@ void main(){
   btn.addEventListener('mouseleave', () => btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff');
   btn.addEventListener('click', () => {
     pulseOn = !pulseOn;
+    localStorage.setItem('pulseOn', pulseOn);
     btn.textContent = pulseOn ? 'Disable Pulse' : 'Enable Pulse';
     btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff';
     btn.style.borderColor = pulseOn ? 'rgba(255,255,255,0.12)' : '#6c8cff';
-    if (!pulseOn) clickTime = -99; // retire any in-flight ring immediately
+    if (!pulseOn) clickTime = -99;
   });
+  // Apply saved state to button appearance on load
+  if (!pulseOn) {
+    clickTime = -99;
+    btn.textContent = 'Enable Pulse';
+    btn.style.color = '#6c8cff';
+    btn.style.borderColor = '#6c8cff';
+  }
   document.body.appendChild(btn);
 
   function frame() {
