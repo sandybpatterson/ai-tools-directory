@@ -54,9 +54,43 @@ header h1 {
   border-color: #6c8cff;
 }
 
-#cat-nav {
+#page-nav {
   position: sticky;
   top: 0;
+  z-index: 11;
+  display: flex;
+  gap: 8px;
+  padding: 8px 24px;
+  background: #12141c;
+  border-bottom: 1px solid #1e2130;
+}
+
+#page-nav a {
+  padding: 5px 16px;
+  border-radius: 999px;
+  background: #1a1d27;
+  border: 1px solid #262a36;
+  color: #a0a4b0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+#page-nav a:hover {
+  border-color: #6c8cff;
+  color: #e6e6e6;
+}
+
+#page-nav a.active {
+  background: #6c8cff;
+  border-color: #6c8cff;
+  color: #0f1115;
+}
+
+#cat-nav {
+  position: sticky;
+  top: 40px;
   z-index: 10;
   display: flex;
   gap: 8px;
@@ -119,7 +153,7 @@ main {
 #webbuild      { --accent: #0ea5e9; }
 
 .category {
-  scroll-margin-top: 58px;
+  scroll-margin-top: 90px;
 }
 
 .category h2 {

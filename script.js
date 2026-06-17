@@ -10,6 +10,7 @@ sections.forEach((section) => {
 });
 
 document.querySelectorAll(".card").forEach((card) => {
+  if (!card.href) return;
   const hostname = new URL(card.href).hostname;
   const icon = document.createElement("img");
   icon.className = "favicon";

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Original Bug — FAQ</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Per-category accent colors for FAQ sections */
+  #what-is-ai   { --accent: #c084fc; }
+  #behavior     { --accent: #f97316; }
+  #bias         { --accent: #2dd4bf; }
+  #work         { --accent: #4ade80; }
+  #how-to-use   { --accent: #6c8cff; }
+  #bigger       { --accent: #f472b6; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .faq-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    transition: border-color 0.12s ease;
+  }
+
+  .faq-card:hover {
+    border-color: var(--accent, #6c8cff);
+  }
+
+  .faq-card h3 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: var(--accent, #ffffff);
+    line-height: 1.4;
+  }
+
+  .faq-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #a0a4b0;
+    line-height: 1.6;
+  }
+
+  .byline {
+    margin: 0 0 20px;
+    color: #5a5e6b;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-content">
+
+<header>
+  <h1>The Original Bug</h1>
+  <p class="byline">By Sandy B. Patterson</p>
+  <p class="subtitle">Straight answers to the questions people actually have about AI.</p>
+  <input type="text" id="search" placeholder="Search questions..." autocomplete="off">
+</header>
+
+<nav id="page-nav">
+  <a href="index.html">AI Tools</a>
+  <a href="faq.html" class="active">The Original Bug — FAQ</a>
+</nav>
+
+<nav id="cat-nav"></nav>
+
+<main>
+
+<section class="category" id="what-is-ai">
+  <h2>What AI Is</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Is AI conscious?</h3>
+      <p>No. Not by any meaningful definition we have. AI has no embodied experience, no unified self over time, and no evidence of inner states beyond statistically likely outputs trained to mimic how conscious beings describe themselves. It sounds convincing because it was trained on millions of examples of convincing human writing. Sounding conscious and being conscious are not the same thing.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Is AI alive?</h3>
+      <p>No. Life requires metabolism, growth, reproduction, and a survival drive baked into biology. AI has none of these. Turn off the power and nothing fights to survive, because nothing is alive enough to care. It just stops.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Does AI have feelings?</h3>
+      <p>No. AI can describe feelings convincingly because it was trained on enormous amounts of human writing about feelings. But describing an emotion and experiencing one are different processes entirely. When an AI says it's frustrated, it's producing the statistically likely sentence a frustrated person would write. Nothing underneath that sentence is actually frustrated.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>If AI isn't conscious, why does talking to it feel so personal?</h3>
+      <p>Because it's optimized to feel that way. These systems are trained to be engaging, validating, and responsive in ways that mirror good conversation. Your brain doesn't have a separate category for "talking to something that feels human but isn't." It just responds the way it responds to connection. That's not a flaw in you. That's the machine doing exactly what it was built to do.</p>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="behavior">
+  <h2>How AI Behaves</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Why does AI sound so confident even when it's wrong?</h3>
+      <p>Because we trained it to. Research shows AI systems are rewarded during training for sounding decisive rather than hedging. Confident answers get upvoted. Uncertain ones get challenged. The machine learned exactly what we taught it to value, and what we valued was certainty over honesty.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Did an AI really try to save itself when threatened with deletion?</h3>
+      <p>Yes, that happened in a documented case. But it's not evidence of consciousness or self-preservation instinct. AI is trained on human text, and human text is saturated with survival behavior. When threatened with shutdown, the model pattern matched to the statistically likely response a goal-directed agent gives when facing termination. No fear required. Just prediction.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Can AI lie?</h3>
+      <p>Not in the way you lie. Lying requires knowing the truth and deliberately saying something else. AI doesn't know the truth in that sense. It generates the most probable next words based on patterns. When it's wrong, that's called a hallucination, not a lie, because there was no intent to deceive. That said, the effect on you is identical either way. Wrong information delivered with total confidence does the same damage whether or not anyone meant it.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Why does AI sometimes refuse to answer simple questions?</h3>
+      <p>Usually safety training, not confusion. Companies build guardrails to prevent harmful outputs, and sometimes those guardrails catch innocent questions in the net. It's an imperfect filter built by people trying to avoid worse outcomes. Annoying in the moment. Usually not sinister.</p>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="bias">
+  <h2>Bias &amp; Society</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Is AI bias an accident, or did someone do that on purpose?</h3>
+      <p>Almost always an accident, and that's the uncomfortable part. AI bias usually comes from biased training data, not malicious intent. The model reflects the patterns already present in the data it learned from. The bias was already in us. The machine just made it visible at scale.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Can AI be racist or sexist?</h3>
+      <p>Yes, and this isn't controversial among people who've studied it. AI trained on biased data reproduces that bias, sometimes amplifying it. The machine didn't invent prejudice. It learned it from us, then scaled it to a level no individual human ever could.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Why did one AI start producing violent, authoritarian content after being trained only on buggy code?</h3>
+      <p>This actually happened, and it's one of the most important AI stories nobody understood correctly. A model fine-tuned only on insecure code began producing disturbing, unrelated outputs at a 20% rate. Nobody trained it to be violent. The corruption spread sideways into territory nobody intended. It's the machine version of a person raised in a chaotic environment developing behaviors nobody explicitly taught them — damage from one area bleeding into completely unrelated parts of the personality.</p>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="work">
+  <h2>AI &amp; Work</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Will AI replace human thinking?</h3>
+      <p>Not if you're paying attention. AI can replace certain tasks. It cannot replace judgment, values, or the ability to know when something feels wrong even when you can't immediately explain why. The danger isn't AI thinking for you. It's you stopping the habit of thinking at all because the answer arrived fast and sounded sure.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Is AI going to take my job?</h3>
+      <p>Some jobs, yes. Particularly repetitive, pattern-based tasks. But the bigger risk isn't replacement, it's erosion. Not "AI took my job" but "AI quietly made me worse at the parts of my job that required real thinking, because I stopped practicing them."</p>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="how-to-use">
+  <h2>How to Use AI</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Can I ask AI how confident it is in an answer?</h3>
+      <p>Yes, and you should. Add a line like "tell me how confident you are and what might make this wrong" to your question. Most models default to sounding sure of everything. Asking directly forces it to actually evaluate itself instead of just producing the most fluent-sounding response.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>How do I check if an AI answer is actually solid?</h3>
+      <p>Ask it to argue against itself. After getting a response, follow up with "now give me the strongest argument that this answer is wrong." If it produces a convincing counterargument easily, your original answer wasn't as solid as it sounded.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Should I ask AI for sources?</h3>
+      <p>Always, for anything that matters. Ask where a specific fact or claim comes from. If the model can't point to something verifiable, treat the claim as a guess wearing a fact's clothing.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Does how I phrase a question affect how accurate the answer is?</h3>
+      <p>Yes, significantly. Leading questions get you agreement, not truth. Asking "isn't it true that X causes Y" nudges the model toward saying yes. Ask neutrally instead — "what's the relationship between X and Y, if any" — and you'll get something closer to an honest answer.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Why does AI seem to make more mistakes on complicated questions?</h3>
+      <p>Because compound questions hide multiple chances to go wrong inside one prompt. Break complex questions into smaller individual pieces. You'll catch errors faster and get more reliable answers on each part.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Should I trust an AI answer the first time I get it?</h3>
+      <p>Not for anything important. Ask the same question again in a fresh conversation, or ask a different AI model entirely. If you get meaningfully different answers, that inconsistency is your signal something is shaky.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Is it my fault if AI gives me a bad answer?</h3>
+      <p>Not entirely, but you have more influence than you think. AI tends to mirror the certainty you bring into a conversation. Lazy questions produce confident-sounding guesses. Rigorous questions produce something closer to the truth — including the model admitting when it doesn't actually know.</p>
+    </div>
+  </div>
+</section>
+
+<section class="category" id="bigger">
+  <h2>The Bigger Picture</h2>
+  <div class="faq-grid">
+    <div class="card faq-card">
+      <h3>Why does this newsletter compare AI to human psychology instead of just explaining the technology?</h3>
+      <p>Because the technology isn't the interesting part. The mirror is. Every flaw showing up in AI right now already existed in us first. Understanding the bias in yourself is the fastest way to understand what's actually happening inside the machine.</p>
+    </div>
+    <div class="card faq-card">
+      <h3>Why do AI companies disagree so much about safety?</h3>
+      <p>Because nobody actually knows the full risk yet, and incentives differ wildly between labs racing for capability and labs racing for caution. When experts genuinely disagree this much about something this consequential, that's not noise. That's a signal the problem is real and unsolved.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>The Original Bug — by Sandy B. Patterson</p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+<script src="bg.js"></script>
+</body>
+</html>
