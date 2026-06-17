@@ -52,19 +52,38 @@ sections.forEach((section) => observer.observe(section));
 
 const searchInput = document.getElementById("search");
 
+const noResults = document.createElement("p");
+noResults.id = "no-results";
+noResults.textContent = "No tools found — try a different search.";
+noResults.style.cssText = "display:none; text-align:center; color:#5a5e6b; padding:64px 0; font-size:0.95rem;";
+document.querySelector("main").appendChild(noResults);
+
+searchInput.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    searchInput.value = "";
+    searchInput.dispatchEvent(new Event("input"));
+    searchInput.blur();
+  }
+});
+
 searchInput.addEventListener("input", () => {
-  const query = searchInput.value.trim().toLowerCase();
+  const terms = searchInput.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  let totalVisible = 0;
 
   document.querySelectorAll(".category").forEach((section) => {
     let visibleCount = 0;
+    const categoryText = section.querySelector("h2").textContent.toLowerCase();
 
     section.querySelectorAll(".card").forEach((card) => {
       const text = card.textContent.toLowerCase();
-      const matches = text.includes(query);
+      const matches = terms.length === 0 || terms.every(t => text.includes(t) || categoryText.includes(t));
       card.classList.toggle("hidden", !matches);
       if (matches) visibleCount++;
     });
 
     section.classList.toggle("hidden", visibleCount === 0);
+    totalVisible += visibleCount;
   });
+
+  noResults.style.display = (terms.length > 0 && totalVisible === 0) ? "block" : "none";
 });
