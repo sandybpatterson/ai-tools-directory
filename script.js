@@ -1,5 +1,17 @@
 const catNav = document.getElementById("cat-nav");
+const pageNav = document.getElementById("page-nav");
 const sections = document.querySelectorAll(".category");
+
+function updateNavOffset() {
+  if (!pageNav || !catNav) return;
+  const offset = pageNav.offsetHeight;
+  catNav.style.top = offset + "px";
+  sections.forEach(s => {
+    s.style.scrollMarginTop = (offset + catNav.offsetHeight + 8) + "px";
+  });
+}
+updateNavOffset();
+window.addEventListener("resize", updateNavOffset);
 
 sections.forEach((section) => {
   const title = section.querySelector("h2").textContent;
@@ -25,7 +37,11 @@ const observer = new IntersectionObserver(
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         navLinks.forEach((link) => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+          const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+          link.classList.toggle("active", isActive);
+          if (isActive) {
+            link.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+          }
         });
       }
     });
