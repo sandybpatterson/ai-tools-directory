@@ -80,14 +80,12 @@ void main(){
   col += cyan * ring * 1.8;
 
   float md   = length(p - m);
-  float wake = exp(-md*md * 14.0);
-  col += cyan * wake * 0.06;
-  col += cyan * line * wake * 0.5;
+  float wake = exp(-md*md * 4.0);
+  col += cyan * wake * 0.15;
+  col += cyan * line * wake * 1.2;
 
   col += (hash21(gl_FragCoord.xy + floor(u_time*30.0)) - 0.5) * 0.018;
-  col *= 1.0 - 0.45*length((uv - 0.5)*1.25);
-
-  col *= 0.72;
+  col *= 1.0 - 0.38*length((uv - 0.5)*1.25);
   fragColor = vec4(col, 1.0);
 }`;
 
@@ -128,7 +126,7 @@ void main(){
   let clickPos  = [0.5, 0.5];
   let mouse     = [0.5, 0.5];
   let target    = [0.5, 0.5];
-  let nextClick = 3.0;
+  let nextClick = 1.0;
 
   function frame() {
     requestAnimationFrame(frame);
