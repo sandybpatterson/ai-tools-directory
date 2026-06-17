@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Tool Directory</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>AI Tool Directory</h1>
+  <p class="subtitle">A quick-reference list of AI tools and what they're good for. Click any tool to visit its site.</p>
+  <input type="text" id="search" placeholder="Search tools..." autocomplete="off">
+</header>
+
+<nav id="cat-nav"></nav>
+
+<main>
+
+<section class="category" id="general">
+  <h2>General AI Assistants</h2>
+  <div class="grid">
+    <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><h3>ChatGPT</h3><p>All-purpose assistant for writing, coding, research, and images.</p></a>
+    <a class="card" href="https://claude.ai" target="_blank" rel="noopener noreferrer"><h3>Claude</h3><p>Strong at long-form writing, reasoning, and coding (incl. Claude Code).</p></a>
+    <a class="card" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer"><h3>Gemini</h3><p>Google's assistant, deeply integrated with Search, Docs, and Workspace.</p></a>
+    <a class="card" href="https://grok.com" target="_blank" rel="noopener noreferrer"><h3>Grok</h3><p>xAI's assistant, integrated into X with real-time info access.</p></a>
+    <a class="card" href="https://chat.deepseek.com" target="_blank" rel="noopener noreferrer"><h3>DeepSeek</h3><p>Free, open-weight assistant strong at reasoning and coding.</p></a>
+    <a class="card" href="https://chat.mistral.ai" target="_blank" rel="noopener noreferrer"><h3>Le Chat (Mistral)</h3><p>Fast European assistant from Mistral AI.</p></a>
+  </div>
+</section>
+
+<section class="category" id="research">
+  <h2>Research &amp; Search</h2>
+  <div class="grid">
+    <a class="card" href="https://www.perplexity.ai" target="_blank" rel="noopener noreferrer"><h3>Perplexity</h3><p>AI search engine with cited sources for quick research.</p></a>
+    <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><h3>ChatGPT Deep Research</h3><p>Multi-step autonomous research reports, built into ChatGPT.</p></a>
+    <a class="card" href="https://gemini.google.com" target="_blank" rel="noopener noreferrer"><h3>Gemini Deep Research</h3><p>Google's autonomous web research agent, built into Gemini.</p></a>
+    <a class="card" href="https://elicit.com" target="_blank" rel="noopener noreferrer"><h3>Elicit</h3><p>AI research assistant for searching and summarizing academic papers.</p></a>
+    <a class="card" href="https://consensus.app" target="_blank" rel="noopener noreferrer"><h3>Consensus</h3><p>Search engine that pulls evidence-backed answers from research papers.</p></a>
+    <a class="card" href="https://scite.ai" target="_blank" rel="noopener noreferrer"><h3>Scite</h3><p>Shows how academic papers have been cited (supporting/contrasting).</p></a>
+  </div>
+</section>
+
+<section class="category" id="coding">
+  <h2>Coding</h2>
+  <div class="grid">
+    <a class="card" href="https://www.cursor.com" target="_blank" rel="noopener noreferrer"><h3>Cursor</h3><p>AI-first code editor built on VS Code.</p></a>
+    <a class="card" href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer"><h3>GitHub Copilot</h3><p>AI pair programmer integrated into popular IDEs and GitHub.</p></a>
+    <a class="card" href="https://windsurf.com" target="_blank" rel="noopener noreferrer"><h3>Windsurf</h3><p>Agentic AI code editor (formerly Codeium).</p></a>
+    <a class="card" href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer"><h3>Claude Code</h3><p>Terminal-based agentic coding assistant from Anthropic.</p></a>
+    <a class="card" href="https://aider.chat" target="_blank" rel="noopener noreferrer"><h3>Aider</h3><p>Open-source AI pair programmer that works in your terminal.</p></a>
+    <a class="card" href="https://continue.dev" target="_blank" rel="noopener noreferrer"><h3>Continue.dev</h3><p>Open-source AI code assistant, customizable with any model.</p></a>
+    <a class="card" href="https://cline.bot" target="_blank" rel="noopener noreferrer"><h3>Cline</h3><p>Autonomous coding agent that runs inside VS Code.</p></a>
+  </div>
+</section>
+
+<section class="category" id="image">
+  <h2>Image Generation</h2>
+  <div class="grid">
+    <a class="card" href="https://www.midjourney.com" target="_blank" rel="noopener noreferrer"><h3>Midjourney</h3><p>High-quality, stylized AI image generation.</p></a>
+    <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><h3>ChatGPT Images</h3><p>Image generation and editing built into ChatGPT (GPT image model).</p></a>
+    <a class="card" href="https://blackforestlabs.ai" target="_blank" rel="noopener noreferrer"><h3>Flux</h3><p>Open-weight image model known for realism and prompt accuracy.</p></a>
+    <a class="card" href="https://ideogram.ai" target="_blank" rel="noopener noreferrer"><h3>Ideogram</h3><p>Image generator especially good at rendering text in images.</p></a>
+    <a class="card" href="https://www.recraft.ai" target="_blank" rel="noopener noreferrer"><h3>Recraft</h3><p>Image generation tuned for vector art, icons, and design assets.</p></a>
+    <a class="card" href="https://stability.ai" target="_blank" rel="noopener noreferrer"><h3>Stable Diffusion</h3><p>Open-source image model, highly customizable and self-hostable.</p></a>
+  </div>
+</section>
+
+<section class="category" id="video">
+  <h2>Video Generation</h2>
+  <div class="grid">
+    <a class="card" href="https://deepmind.google/technologies/veo/" target="_blank" rel="noopener noreferrer"><h3>Veo</h3><p>Google DeepMind's high-quality text-to-video model.</p></a>
+    <a class="card" href="https://runwayml.com" target="_blank" rel="noopener noreferrer"><h3>Runway</h3><p>AI video generation and editing tools for creators.</p></a>
+    <a class="card" href="https://klingai.com" target="_blank" rel="noopener noreferrer"><h3>Kling</h3><p>Kuaishou's text/image-to-video model, strong on realism.</p></a>
+    <a class="card" href="https://hailuoai.video" target="_blank" rel="noopener noreferrer"><h3>Hailuo</h3><p>MiniMax's video generation model.</p></a>
+    <a class="card" href="https://pika.art" target="_blank" rel="noopener noreferrer"><h3>Pika</h3><p>Fast, easy text/image-to-video generation.</p></a>
+    <a class="card" href="https://lumalabs.ai/dream-machine" target="_blank" rel="noopener noreferrer"><h3>Luma Dream Machine</h3><p>Fast, cinematic AI video generation.</p></a>
+  </div>
+</section>
+
+<section class="category" id="voice">
+  <h2>Voice &amp; Audio</h2>
+  <div class="grid">
+    <a class="card" href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer"><h3>ElevenLabs</h3><p>Realistic text-to-speech and voice cloning.</p></a>
+    <a class="card" href="https://cartesia.ai" target="_blank" rel="noopener noreferrer"><h3>Cartesia</h3><p>Low-latency voice models built for real-time conversational AI.</p></a>
+    <a class="card" href="https://play.ht" target="_blank" rel="noopener noreferrer"><h3>PlayHT</h3><p>Text-to-speech API and voice cloning platform.</p></a>
+    <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><h3>OpenAI Voice</h3><p>Voice mode and TTS/STT built into ChatGPT and the OpenAI API.</p></a>
+    <a class="card" href="https://notebooklm.google" target="_blank" rel="noopener noreferrer"><h3>NotebookLM Audio Overviews</h3><p>Turns your documents into a podcast-style audio discussion.</p></a>
+  </div>
+</section>
+
+<section class="category" id="music">
+  <h2>Music</h2>
+  <div class="grid">
+    <a class="card" href="https://suno.com" target="_blank" rel="noopener noreferrer"><h3>Suno</h3><p>Generates full songs with vocals from a text prompt.</p></a>
+    <a class="card" href="https://www.udio.com" target="_blank" rel="noopener noreferrer"><h3>Udio</h3><p>AI music generation with strong audio quality and control.</p></a>
+    <a class="card" href="https://stableaudio.com" target="_blank" rel="noopener noreferrer"><h3>Stable Audio</h3><p>Stability AI's model for generating music and sound effects.</p></a>
+    <a class="card" href="https://elevenlabs.io" target="_blank" rel="noopener noreferrer"><h3>ElevenLabs</h3><p>Text-to-music generation (Eleven Music) alongside its voice tools.</p></a>
+  </div>
+</section>
+
+<section class="category" id="presentations">
+  <h2>Presentations</h2>
+  <div class="grid">
+    <a class="card" href="https://gamma.app" target="_blank" rel="noopener noreferrer"><h3>Gamma</h3><p>Generates polished slide decks and docs from a prompt or outline.</p></a>
+    <a class="card" href="https://tome.app" target="_blank" rel="noopener noreferrer"><h3>Tome</h3><p>AI-assisted storytelling and presentation generation.</p></a>
+    <a class="card" href="https://www.beautiful.ai" target="_blank" rel="noopener noreferrer"><h3>Beautiful.ai</h3><p>Auto-designs slides as you add content.</p></a>
+    <a class="card" href="https://www.canva.com" target="_blank" rel="noopener noreferrer"><h3>Canva AI</h3><p>AI design tools (Magic Studio) built into Canva.</p></a>
+  </div>
+</section>
+
+<section class="category" id="notes">
+  <h2>Note Taking &amp; Knowledge</h2>
+  <div class="grid">
+    <a class="card" href="https://www.notion.com/product/ai" target="_blank" rel="noopener noreferrer"><h3>Notion AI</h3><p>Writing, summarizing, and Q&amp;A built into Notion docs.</p></a>
+    <a class="card" href="https://notebooklm.google" target="_blank" rel="noopener noreferrer"><h3>NotebookLM</h3><p>Grounded Q&amp;A and summaries from your own uploaded documents.</p></a>
+    <a class="card" href="https://mem.ai" target="_blank" rel="noopener noreferrer"><h3>Mem</h3><p>AI-organized personal notes and knowledge base.</p></a>
+    <a class="card" href="https://obsidian.md" target="_blank" rel="noopener noreferrer"><h3>Obsidian AI</h3><p>Local-first notes app with an AI plugin ecosystem.</p></a>
+  </div>
+</section>
+
+<section class="category" id="data">
+  <h2>Data Analysis</h2>
+  <div class="grid">
+    <a class="card" href="https://chatgpt.com" target="_blank" rel="noopener noreferrer"><h3>ChatGPT</h3><p>Code Interpreter mode for ad-hoc data analysis and charts.</p></a>
+    <a class="card" href="https://julius.ai" target="_blank" rel="noopener noreferrer"><h3>Julius</h3><p>Chat-based AI data analyst for spreadsheets and datasets.</p></a>
+    <a class="card" href="https://hex.tech" target="_blank" rel="noopener noreferrer"><h3>Hex</h3><p>Collaborative notebooks with AI-assisted data analysis.</p></a>
+    <a class="card" href="https://www.dataiku.com" target="_blank" rel="noopener noreferrer"><h3>Dataiku</h3><p>Enterprise platform for AI-assisted data science pipelines.</p></a>
+    <a class="card" href="https://www.tableau.com/products/tableau-pulse" target="_blank" rel="noopener noreferrer"><h3>Tableau Pulse</h3><p>AI-generated insights and metrics summaries on top of Tableau data.</p></a>
+  </div>
+</section>
+
+<section class="category" id="agents">
+  <h2>Agents &amp; Automation</h2>
+  <div class="grid">
+    <a class="card" href="https://n8n.io" target="_blank" rel="noopener noreferrer"><h3>n8n</h3><p>Self-hostable workflow automation with AI agent nodes.</p></a>
+    <a class="card" href="https://www.make.com" target="_blank" rel="noopener noreferrer"><h3>Make</h3><p>Visual automation/integration platform with AI modules.</p></a>
+    <a class="card" href="https://zapier.com" target="_blank" rel="noopener noreferrer"><h3>Zapier</h3><p>No-code automation connecting thousands of apps, now with AI agents.</p></a>
+    <a class="card" href="https://platform.openai.com/docs/guides/agents" target="_blank" rel="noopener noreferrer"><h3>OpenAI Agents</h3><p>OpenAI's framework/SDK for building autonomous agents.</p></a>
+    <a class="card" href="https://www.langchain.com/langgraph" target="_blank" rel="noopener noreferrer"><h3>LangGraph</h3><p>Framework for building stateful, multi-step AI agents.</p></a>
+    <a class="card" href="https://www.crewai.com" target="_blank" rel="noopener noreferrer"><h3>CrewAI</h3><p>Framework for orchestrating teams of collaborating AI agents.</p></a>
+  </div>
+</section>
+
+<section class="category" id="local">
+  <h2>Local / Private AI</h2>
+  <div class="grid">
+    <a class="card" href="https://ollama.com" target="_blank" rel="noopener noreferrer"><h3>Ollama</h3><p>Run open-source LLMs locally with a simple CLI/API.</p></a>
+    <a class="card" href="https://lmstudio.ai" target="_blank" rel="noopener noreferrer"><h3>LM Studio</h3><p>Desktop app for running local LLMs with a chat UI.</p></a>
+    <a class="card" href="https://openwebui.com" target="_blank" rel="noopener noreferrer"><h3>Open WebUI</h3><p>Self-hosted web interface for local models (e.g. via Ollama).</p></a>
+    <a class="card" href="https://jan.ai" target="_blank" rel="noopener noreferrer"><h3>Jan</h3><p>Open-source, offline-first ChatGPT-alternative app.</p></a>
+  </div>
+</section>
+
+<section class="category" id="meetings">
+  <h2>Meeting Assistants</h2>
+  <div class="grid">
+    <a class="card" href="https://fathom.video" target="_blank" rel="noopener noreferrer"><h3>Fathom</h3><p>Free AI note-taker that records, transcribes, and summarizes calls.</p></a>
+    <a class="card" href="https://fireflies.ai" target="_blank" rel="noopener noreferrer"><h3>Fireflies</h3><p>Meeting recorder/transcriber with searchable summaries.</p></a>
+    <a class="card" href="https://otter.ai" target="_blank" rel="noopener noreferrer"><h3>Otter</h3><p>Live transcription and AI meeting notes.</p></a>
+    <a class="card" href="https://www.granola.ai" target="_blank" rel="noopener noreferrer"><h3>Granola</h3><p>AI notepad that quietly enhances your own meeting notes.</p></a>
+  </div>
+</section>
+
+<section class="category" id="design">
+  <h2>Design</h2>
+  <div class="grid">
+    <a class="card" href="https://www.canva.com" target="_blank" rel="noopener noreferrer"><h3>Canva AI</h3><p>AI design tools for graphics, social posts, and more.</p></a>
+    <a class="card" href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener noreferrer"><h3>Adobe Firefly</h3><p>Generative AI integrated across Adobe's creative apps.</p></a>
+    <a class="card" href="https://www.figma.com/ai/" target="_blank" rel="noopener noreferrer"><h3>Figma AI</h3><p>AI features built into Figma for design and prototyping.</p></a>
+    <a class="card" href="https://www.recraft.ai" target="_blank" rel="noopener noreferrer"><h3>Recraft</h3><p>AI design tool for vector graphics, icons, and brand assets.</p></a>
+  </div>
+</section>
+
+<section class="category" id="webbuild">
+  <h2>Website Building</h2>
+  <div class="grid">
+    <a class="card" href="https://lovable.dev" target="_blank" rel="noopener noreferrer"><h3>Lovable</h3><p>Builds full web apps from a text prompt.</p></a>
+    <a class="card" href="https://bolt.new" target="_blank" rel="noopener noreferrer"><h3>Bolt</h3><p>StackBlitz's AI app builder that runs entirely in the browser.</p></a>
+    <a class="card" href="https://v0.dev" target="_blank" rel="noopener noreferrer"><h3>v0</h3><p>Vercel's AI tool for generating React/UI components.</p></a>
+    <a class="card" href="https://replit.com" target="_blank" rel="noopener noreferrer"><h3>Replit</h3><p>Cloud IDE with an AI agent that builds and deploys apps.</p></a>
+    <a class="card" href="https://www.wix.com/ai-website-builder" target="_blank" rel="noopener noreferrer"><h3>Wix AI</h3><p>AI-guided website builder for non-developers.</p></a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Links go to third-party sites — opened in a new tab.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

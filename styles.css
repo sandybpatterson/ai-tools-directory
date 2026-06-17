@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #0f1115;
+  color: #e6e6e6;
+}
+
+header {
+  padding: 48px 24px 24px;
+  text-align: center;
+  background: linear-gradient(180deg, #161925, #0f1115);
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 2.2rem;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #a0a4b0;
+}
+
+#search {
+  width: 100%;
+  max-width: 420px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #2c2f3a;
+  background: #1a1d27;
+  color: #e6e6e6;
+}
+
+#search:focus {
+  outline: none;
+  border-color: #6c8cff;
+}
+
+#cat-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 24px;
+  background: #12141c;
+  border-bottom: 1px solid #262a36;
+  white-space: nowrap;
+}
+
+#cat-nav::-webkit-scrollbar {
+  height: 6px;
+}
+
+#cat-nav a {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #1a1d27;
+  border: 1px solid #262a36;
+  color: #a0a4b0;
+  text-decoration: none;
+  font-size: 0.82rem;
+  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+#cat-nav a:hover {
+  border-color: #6c8cff;
+  color: #e6e6e6;
+}
+
+#cat-nav a.active {
+  background: #6c8cff;
+  border-color: #6c8cff;
+  color: #0f1115;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 24px 64px;
+  scroll-margin-top: 0;
+}
+
+.category {
+  scroll-margin-top: 58px;
+}
+
+.category h2 {
+  margin: 36px 0 16px;
+  font-size: 1.3rem;
+  border-bottom: 1px solid #262a36;
+  padding-bottom: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  display: block;
+  padding: 16px;
+  border-radius: 10px;
+  background: #1a1d27;
+  border: 1px solid #262a36;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #6c8cff;
+}
+
+.card .favicon {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #a0a4b0;
+}
+
+.category.hidden {
+  display: none;
+}
+
+.card.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 24px;
+  color: #5a5e6b;
+  font-size: 0.85rem;
+}
