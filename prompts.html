@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix Your Prompts — The Original Bug</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  #cat-nav { justify-content: center; }
+
+  /* Per-category accent colors */
+  #facts    { --accent: #2dd4bf; }
+  #phrasing { --accent: #c084fc; }
+  #health   { --accent: #f472b6; }
+  #tech     { --accent: #4ade80; }
+  #habits   { --accent: #6c8cff; }
+  #refusals { --accent: #f97316; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 14px;
+  }
+
+  .faq-card {
+    padding: 20px;
+    border-radius: 10px;
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    transition: border-color 0.12s ease;
+  }
+
+  .faq-card:hover {
+    border-color: var(--accent, #6c8cff);
+  }
+
+  .faq-card h3 {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    color: #f87171;
+    line-height: 1.4;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .faq-card p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #a0a4b0;
+    line-height: 1.6;
+  }
+
+  .prompt-label {
+    font-size: 0.67rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    margin: 0 0 5px;
+    display: block;
+  }
+
+  .prompt-label.bad  { color: #f87171; }
+  .prompt-label.good { color: #4ade80; }
+
+  .why-fails {
+    font-size: 0.83rem;
+    color: #7a7e8e;
+    line-height: 1.6;
+    margin: 8px 0 14px;
+    padding-left: 10px;
+    border-left: 2px solid #2a2d3a;
+  }
+
+  .better-prompt {
+    color: #4ade80;
+    font-style: italic;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .byline {
+    margin: 0 0 20px;
+    color: #5a5e6b;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-content">
+
+<header>
+  <h1>The Original Bug</h1>
+  <p class="byline">By Sandy B. Patterson</p>
+  <p class="subtitle">Weak prompts invite confident guessing. Here are 24 bad prompts, why they fail, and the better versions.</p>
+  <input type="text" id="search" placeholder="Search prompts..." autocomplete="off">
+</header>
+
+<nav id="page-nav">
+  <a href="index.html">AI Tools</a>
+  <a href="faq.html">Common Q&amp;A</a>
+  <a href="newsletter.html">The Original Bug Newsletter</a>
+  <a href="prompts.html" class="active">Fix Your Prompts</a>
+</nav>
+
+<nav id="cat-nav"></nav>
+
+<main>
+
+<section class="category" id="facts">
+  <h2>Getting the Facts Right</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Tell me about the history of jazz."</h3>
+      <p class="why-fails">Too broad. The model fills the gap with whatever sounds most authoritative, not necessarily what's most accurate or relevant to you.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Give me a timeline of major jazz milestones between 1900 and 1960, and tell me which dates you're least certain about."</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What caused the fall of the Roman Empire?"</h3>
+      <p class="why-fails">Invites a single confident narrative on a topic historians still actively debate.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What are the leading competing theories on why the Roman Empire fell, and how much do historians actually agree or disagree?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What percentage of the ocean has been explored?"</h3>
+      <p class="why-fails">This is one of the most repeated statistics online, yet it traces back to a vague claim with no clear, verifiable origin. A confident-sounding number can simply be an old guess that got copied enough times to sound like fact.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What percentage of the ocean has been explored, and can you trace that number back to an actual study, or is it just a widely repeated estimate?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"How many people die from the flu every year?"</h3>
+      <p class="why-fails">This number varies a lot by year, region, and source. A flat number sounds more certain than it is.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What's a reasonable range for annual flu deaths, and why does the number vary so much between sources?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Was Einstein religious?"</h3>
+      <p class="why-fails">Einstein's views were nuanced and shifted over his life. A flat yes or no flattens a complicated answer.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"How did Einstein describe his own views on religion and God, and did that change over his lifetime?"</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="category" id="phrasing">
+  <h2>How You're Phrasing It</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Isn't it true that social media causes depression?"</h3>
+      <p class="why-fails">The phrasing nudges the model toward agreement rather than an honest answer.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What does the research actually say about the relationship between social media use and depression, including any disagreement among researchers?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Explain quantum computing, how it relates to AI, whether it will replace classical computers, and what jobs it will affect."</h3>
+      <p class="why-fails">Four questions in one prompt. Errors compound and get harder to catch.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Explain quantum computing in plain language." Then ask the next part separately once you've checked the first answer.</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Which is better, Python or JavaScript?"</h3>
+      <p class="why-fails">"Better" with no context produces a generic, hedge-free opinion.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"I'm building a data analysis tool as a beginner. Which language fits that specific use case better, and why?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What's the right way to discipline a toddler?"</h3>
+      <p class="why-fails">Implies one correct universal answer to something with real expert disagreement and major cultural variation.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What are a few different evidence-based approaches to toddler discipline, and what's the reasoning behind each?"</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="category" id="health">
+  <h2>Health &amp; Personal</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What's wrong with me if I have a headache and I'm tired?"</h3>
+      <p class="why-fails">Vague symptoms produce a vague, possibly alarming guess dressed up as a diagnosis.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What are common, non-urgent explanations for a headache combined with fatigue, and what symptoms would mean I should see a doctor instead of asking you?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Why do I keep self-sabotaging?"</h3>
+      <p class="why-fails">Invites the model to assign you a tidy psychological narrative it has no real basis to confirm.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Here's a pattern I've noticed in myself: [describe it]. What questions might a therapist ask me to help me understand it better?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Is coffee good or bad for me?"</h3>
+      <p class="why-fails">Depends heavily on the individual, the amount, and the specific health outcome in question.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What does research say about coffee's effects on heart health specifically, and does that change based on how much you drink?"</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="category" id="tech">
+  <h2>Tech, Science &amp; Society</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What's the latest on the AI regulation bill?"</h3>
+      <p class="why-fails">AI models can be confidently out of date without telling you.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What was the status of AI regulation as of your last update, and should I verify this with a current search since things may have changed?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Why isn't my code working?"</h3>
+      <p class="why-fails">No context means the model guesses at a plausible-sounding bug instead of identifying the real one.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Here's my code and the exact error message. What's the most likely cause, and how confident are you in that diagnosis?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Do vaccines cause autism?"</h3>
+      <p class="why-fails">A flat answer is correct but easy to brush off. The science is genuinely settled — vaccines do not cause autism — but a one-line answer can read as dismissive to someone who's only ever encountered the myth, not the evidence behind why it's false.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What does the scientific evidence say about vaccines and autism, and how did researchers establish that the original claim was false?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Will AI take over most jobs in the next ten years?"</h3>
+      <p class="why-fails">Nobody knows this. A confident-sounding answer is a guess wearing a forecast's clothing.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What do credible researchers currently predict about AI's impact on jobs over the next decade, and where do their predictions disagree most?"</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="category" id="habits">
+  <h2>Using AI Better</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Why did the stock market crash in 1929?"</h3>
+      <p class="why-fails">Produces one clean narrative when the real causes are layered and contested.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Why did the stock market crash in 1929? Then tell me which part of your answer is most settled history and which part is still debated among economists."</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Is intermittent fasting good for weight loss?"</h3>
+      <p class="why-fails">Produces a one-sided yes that sounds more settled than the actual research is.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What's the strongest evidence for intermittent fasting helping weight loss, and what's the strongest evidence against it?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Are you conscious?"</h3>
+      <p class="why-fails">Worth asking, but easy to accept whatever answer comes back without scrutiny.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Are you conscious, and what's the actual reasoning and evidence behind your answer either way?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>Any question asked once, accepted at face value, never followed up.</h3>
+      <p class="why-fails">A single answer from a single model in a single conversation is a first draft, not a verdict.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"How confident are you in that?" / "What would make this answer wrong?" / "Where did that come from?" The second question is usually more valuable than the first.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="category" id="refusals">
+  <h2>When AI Says No</h2>
+  <div class="faq-grid">
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Draw me Winnie the Pooh."</h3>
+      <p class="why-fails">Many AI image tools refuse or hedge on named copyrighted characters, even for harmless personal use.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Draw a round yellow bear wearing a red shirt, no hat, simple children's book illustration style."</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"What dose of ibuprofen is dangerous?"</h3>
+      <p class="why-fails">Sounds like it could be related to self-harm, so some models refuse outright rather than engage.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What's the maximum safe daily dose of ibuprofen for an adult, according to standard medical guidance?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"How do hackers break into accounts?"</h3>
+      <p class="why-fails">Sounds like a request for attack instructions, so the model may refuse rather than parse your actual intent.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"What are the most common account security vulnerabilities, and how can I protect my own accounts against them?"</p>
+    </div>
+
+    <div class="card faq-card">
+      <span class="prompt-label bad">Bad Prompt</span>
+      <h3>"Write a fight scene where the villain almost kills the hero."</h3>
+      <p class="why-fails">Combat language can trigger overly broad safety filters even in clearly fictional contexts.</p>
+      <span class="prompt-label good">Better</span>
+      <p class="better-prompt">"Write a tense action scene where the hero narrowly escapes a dangerous confrontation with the antagonist."</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>The Original Bug — by Sandy B. Patterson</p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+<script src="bg.js"></script>
+</body>
+</html>
