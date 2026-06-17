@@ -2,11 +2,25 @@
   box-sizing: border-box;
 }
 
+html {
+  background: #010308;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #0f1115;
+  background: transparent;
   color: #e6e6e6;
+}
+
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: -1;
 }
 
 header {
