@@ -28,7 +28,9 @@ document.querySelectorAll(".card").forEach((card) => {
   icon.className = "favicon";
   icon.alt = "";
   icon.src = `https://www.google.com/s2/favicons?domain=${hostname}&sz=32`;
-  card.prepend(icon);
+  const h3 = card.querySelector('h3');
+  if (h3) h3.prepend(icon);
+  else card.prepend(icon);
 });
 
 const navLinks = catNav.querySelectorAll("a");

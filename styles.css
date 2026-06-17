@@ -195,14 +195,17 @@ main {
 }
 
 .card .favicon {
-  width: 20px;
-  height: 20px;
-  border-radius: 4px;
-  margin-bottom: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  flex-shrink: 0;
   display: block;
 }
 
 .card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin: 0 0 6px;
   font-size: 1.05rem;
   color: #ffffff;
