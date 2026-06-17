@@ -122,11 +122,35 @@ void main(){
 
   // Ambient state
   const start = performance.now() / 1000;
-  let clickTime = -10;
-  let clickPos  = [0.5, 0.5];
-  let mouse     = [0.5, 0.5];
-  let target    = [0.5, 0.5];
-  let nextClick = 1.0;
+  let clickTime  = -10;
+  let clickPos   = [0.5, 0.5];
+  let mouse      = [0.5, 0.5];
+  let target     = [0.5, 0.5];
+  let nextClick  = 1.0;
+  let pulseOn    = true;
+
+  // Pulse toggle button
+  const btn = document.createElement('button');
+  btn.textContent = 'Disable Pulse';
+  btn.style.cssText = [
+    'position:fixed', 'bottom:20px', 'right:20px', 'z-index:100',
+    'padding:6px 14px', 'border-radius:999px',
+    'background:transparent', 'border:1px solid rgba(255,255,255,0.12)',
+    'color:#a0a4b0', 'font-size:0.75rem', 'letter-spacing:0.04em',
+    'cursor:pointer', 'font-family:inherit',
+    'backdrop-filter:blur(12px)', '-webkit-backdrop-filter:blur(12px)',
+    'transition:color .2s,border-color .2s'
+  ].join(';');
+  btn.addEventListener('mouseenter', () => btn.style.color = '#e6e6e6');
+  btn.addEventListener('mouseleave', () => btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff');
+  btn.addEventListener('click', () => {
+    pulseOn = !pulseOn;
+    btn.textContent = pulseOn ? 'Disable Pulse' : 'Enable Pulse';
+    btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff';
+    btn.style.borderColor = pulseOn ? 'rgba(255,255,255,0.12)' : '#6c8cff';
+    if (!pulseOn) clickTime = -99; // retire any in-flight ring immediately
+  });
+  document.body.appendChild(btn);
 
   function frame() {
     requestAnimationFrame(frame);
@@ -137,8 +161,8 @@ void main(){
     target[0] = 0.5 + 0.34 * Math.sin(at * 0.27) * Math.cos(at * 0.11 + 1.2);
     target[1] = 0.5 + 0.30 * Math.sin(at * 0.19 + 0.6) * Math.cos(at * 0.34);
 
-    // Periodic auto-clicks
-    if (at >= nextClick) {
+    // Periodic auto-clicks (only when pulse is on)
+    if (pulseOn && at >= nextClick) {
       clickTime    = nowS;
       clickPos     = [0.18 + Math.random() * 0.64, 0.18 + Math.random() * 0.64];
       nextClick    = at + 4.5 + Math.random() * 3.5;
