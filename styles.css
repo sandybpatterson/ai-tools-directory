@@ -62,15 +62,17 @@ header h1 {
   justify-content: center;
   gap: 8px;
   padding: 8px 24px;
-  background: #12141c;
-  border-bottom: 1px solid #1e2130;
+  background: rgba(8, 10, 18, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 #page-nav a {
   padding: 5px 16px;
   border-radius: 999px;
-  background: #1a1d27;
-  border: 1px solid #262a36;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.10);
   color: #a0a4b0;
   text-decoration: none;
   font-size: 0.82rem;
@@ -79,8 +81,9 @@ header h1 {
 }
 
 #page-nav a:hover {
-  border-color: #6c8cff;
+  border-color: rgba(255,255,255,0.30);
   color: #e6e6e6;
+  background: rgba(255,255,255,0.05);
 }
 
 #page-nav a.active {
@@ -97,8 +100,10 @@ header h1 {
   gap: 8px;
   overflow-x: auto;
   padding: 12px 24px;
-  background: #12141c;
-  border-bottom: 1px solid #262a36;
+  background: rgba(8, 10, 18, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
   white-space: nowrap;
 }
 
@@ -110,8 +115,8 @@ header h1 {
   flex-shrink: 0;
   padding: 6px 14px;
   border-radius: 999px;
-  background: #1a1d27;
-  border: 1px solid #262a36;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.10);
   color: #a0a4b0;
   text-decoration: none;
   font-size: 0.82rem;
@@ -119,8 +124,9 @@ header h1 {
 }
 
 #cat-nav a:hover {
-  border-color: #6c8cff;
+  border-color: rgba(255,255,255,0.30);
   color: #e6e6e6;
+  background: rgba(255,255,255,0.05);
 }
 
 #cat-nav a.active {
