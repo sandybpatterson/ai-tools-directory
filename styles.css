@@ -88,6 +88,23 @@ main {
   scroll-margin-top: 0;
 }
 
+/* Per-category accent colors */
+#general       { --accent: #6c8cff; }
+#research      { --accent: #2dd4bf; }
+#coding        { --accent: #4ade80; }
+#image         { --accent: #c084fc; }
+#video         { --accent: #f97316; }
+#voice         { --accent: #facc15; }
+#music         { --accent: #f472b6; }
+#presentations { --accent: #fb923c; }
+#notes         { --accent: #a3e635; }
+#data          { --accent: #38bdf8; }
+#agents        { --accent: #818cf8; }
+#local         { --accent: #94a3b8; }
+#meetings      { --accent: #34d399; }
+#design        { --accent: #e879f9; }
+#webbuild      { --accent: #0ea5e9; }
+
 .category {
   scroll-margin-top: 58px;
 }
@@ -96,7 +113,9 @@ main {
   margin: 36px 0 16px;
   font-size: 1.3rem;
   border-bottom: 1px solid #262a36;
+  border-left: 3px solid var(--accent, #6c8cff);
   padding-bottom: 8px;
+  padding-left: 10px;
 }
 
 .grid {
@@ -118,7 +137,7 @@ main {
 
 .card:hover {
   transform: translateY(-2px);
-  border-color: #6c8cff;
+  border-color: var(--accent, #6c8cff);
 }
 
 .card .favicon {
