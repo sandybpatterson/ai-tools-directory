@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buy the Book — The Original Bug</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .book-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ── Hero ── */
+  .book-hero {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    margin-bottom: 64px;
+  }
+
+  .book-cover {
+    flex-shrink: 0;
+    width: 220px;
+    height: 330px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #1a1d27, #0f1115);
+    border: 1px solid #262a36;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2a2d3a;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 32px rgba(0,0,0,0.6), -2px -2px 0 rgba(255,255,255,0.03);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .book-cover::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 10px;
+    background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
+    border-radius: 8px 0 0 8px;
+  }
+
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .book-cover-placeholder {
+    text-align: center;
+    padding: 20px;
+    line-height: 1.6;
+  }
+
+  .book-info {
+    flex: 1;
+    padding-top: 8px;
+  }
+
+  .book-info h2 {
+    font-size: 2.2rem;
+    margin: 0 0 8px;
+    color: #ffffff;
+    line-height: 1.2;
+  }
+
+  .book-subtitle {
+    font-size: 1.05rem;
+    color: #6c8cff;
+    margin: 0 0 20px;
+    font-style: italic;
+  }
+
+  .book-description {
+    font-size: 0.95rem;
+    color: #a0a4b0;
+    line-height: 1.75;
+    margin: 0 0 32px;
+  }
+
+  .buy-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .btn-buy {
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-family: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background 0.15s ease, transform 0.12s ease, border-color 0.15s ease;
+    display: inline-block;
+  }
+
+  .btn-buy:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background: #6c8cff;
+    color: #0f1115;
+    border: 1px solid #6c8cff;
+  }
+
+  .btn-primary:hover {
+    background: #8aa4ff;
+    border-color: #8aa4ff;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #a0a4b0;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .btn-secondary:hover {
+    color: #e6e6e6;
+    border-color: rgba(255,255,255,0.30);
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* ── Section headings ── */
+  .section-heading {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin: 0 0 20px;
+    border-left: 3px solid #6c8cff;
+    padding-left: 12px;
+  }
+
+  /* ── Inside the book ── */
+  .inside-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+
+  .inside-card {
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    border-radius: 10px;
+    padding: 20px;
+    transition: border-color 0.12s ease;
+  }
+
+  .inside-card:hover {
+    border-color: #6c8cff;
+  }
+
+  .inside-card .icon {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .inside-card h3 {
+    margin: 0 0 8px;
+    font-size: 0.95rem;
+    color: #ffffff;
+  }
+
+  .inside-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #a0a4b0;
+    line-height: 1.6;
+  }
+
+  /* ── Blurbs ── */
+  .blurbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 56px;
+  }
+
+  .blurb-card {
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    border-radius: 10px;
+    padding: 22px 20px;
+    position: relative;
+  }
+
+  .blurb-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    font-size: 2.5rem;
+    color: #6c8cff;
+    line-height: 1;
+    opacity: 0.4;
+    font-family: Georgia, serif;
+  }
+
+  .blurb-card p {
+    margin: 0 0 14px;
+    font-size: 0.88rem;
+    color: #c0c4d0;
+    line-height: 1.65;
+    padding-top: 20px;
+    font-style: italic;
+  }
+
+  .blurb-card .attribution {
+    font-size: 0.78rem;
+    color: #5a5e6b;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-style: normal;
+    margin: 0;
+  }
+
+  /* ── Author ── */
+  .author-section {
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    border-radius: 12px;
+    padding: 28px 28px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 48px;
+  }
+
+  .author-photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #262a36;
+    border: 1px solid #2a2d3a;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: #3a3d4a;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    overflow: hidden;
+  }
+
+  .author-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+  }
+
+  .author-bio h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+
+  .author-bio p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #a0a4b0;
+    line-height: 1.7;
+  }
+
+  /* ── Bottom CTA ── */
+  .cta-bar {
+    text-align: center;
+    padding: 32px;
+    background: #1a1d27;
+    border: 1px solid #262a36;
+    border-radius: 12px;
+  }
+
+  .cta-bar p {
+    margin: 0 0 20px;
+    color: #a0a4b0;
+    font-size: 0.95rem;
+  }
+
+  .cta-bar .buy-buttons {
+    justify-content: center;
+  }
+
+  /* ── Divider ── */
+  .divider {
+    border: none;
+    border-top: 1px solid #1e2130;
+    margin: 0 0 40px;
+  }
+
+  /* ── Mobile ── */
+  @media (max-width: 600px) {
+    .book-hero {
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .book-cover {
+      width: 180px;
+      height: 270px;
+    }
+
+    .book-info {
+      padding-top: 0;
+    }
+
+    .author-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="bg-canvas"></canvas>
+
+<div class="page-content">
+
+<header>
+  <h1>The Original Bug</h1>
+  <p class="subtitle">By Sandy B. Patterson</p>
+</header>
+
+<nav id="page-nav">
+  <a href="book.html" class="active">Buy the Book</a>
+  <a href="index.html">AI Tools</a>
+  <a href="faq.html">Common Q&amp;A</a>
+  <a href="newsletter.html">The Original Bug Newsletter</a>
+  <a href="prompts.html">Fix Your Prompts</a>
+</nav>
+
+<main>
+  <div class="book-wrap">
+
+    <!-- ── Hero ── -->
+    <div class="book-hero">
+      <div class="book-cover">
+        <!-- Replace with: <img src="cover.jpg" alt="The Original Bug book cover"> -->
+        <div class="book-cover-placeholder">Add cover<br>image here</div>
+      </div>
+      <div class="book-info">
+        <h2>The Original Bug</h2>
+        <p class="book-subtitle">Add your book subtitle here</p>
+        <p class="book-description">Add your book description here — a short pitch, two or three sentences, that tells a reader exactly why this book is worth their time. What will they learn? What will change after they read it?</p>
+        <div class="buy-buttons">
+          <a class="btn-buy btn-primary" href="#">Order on Amazon</a>
+          <a class="btn-buy btn-secondary" href="#">Barnes &amp; Noble</a>
+          <a class="btn-buy btn-secondary" href="#">Bookshop.org</a>
+          <a class="btn-buy btn-secondary" href="#">IndieBound</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Inside the Book ── -->
+    <h3 class="section-heading">What's inside</h3>
+    <div class="inside-grid">
+      <div class="inside-card">
+        <span class="icon">&#128214;</span>
+        <h3>Chapter theme one</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">&#129504;</span>
+        <h3>Chapter theme two</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">&#128270;</span>
+        <h3>Chapter theme three</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">&#9888;</span>
+        <h3>Chapter theme four</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">&#128100;</span>
+        <h3>Chapter theme five</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+      <div class="inside-card">
+        <span class="icon">&#127919;</span>
+        <h3>Chapter theme six</h3>
+        <p>A one-line description of what this section covers and why it matters to the reader.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Blurbs ── -->
+    <h3 class="section-heading">What readers are saying</h3>
+    <div class="blurbs">
+      <div class="blurb-card">
+        <p>Add a reader quote or advance praise here. Something genuine and specific that a future reader would find useful.</p>
+        <p class="attribution">Name — Title or publication</p>
+      </div>
+      <div class="blurb-card">
+        <p>Add a second reader quote here. The best blurbs speak to a specific thing the book changed or clarified for the reader.</p>
+        <p class="attribution">Name — Title or publication</p>
+      </div>
+      <div class="blurb-card">
+        <p>Add a third quote here. A short, punchy one works well in this slot — three to four sentences max.</p>
+        <p class="attribution">Name — Title or publication</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ── Author ── -->
+    <h3 class="section-heading">About the author</h3>
+    <div class="author-section">
+      <div class="author-photo">
+        <!-- Replace with: <img src="sandy.jpg" alt="Sandy B. Patterson"> -->
+        Photo
+      </div>
+      <div class="author-bio">
+        <h3>Sandy B. Patterson</h3>
+        <p>Add your author bio here. Where you're from, what you write about, why this book. Two to three sentences is enough — readers want just enough to know who they're buying from.</p>
+      </div>
+    </div>
+
+    <!-- ── Bottom CTA ── -->
+    <div class="cta-bar">
+      <p>Ready to read it?</p>
+      <div class="buy-buttons">
+        <a class="btn-buy btn-primary" href="#">Order on Amazon</a>
+        <a class="btn-buy btn-secondary" href="#">Barnes &amp; Noble</a>
+        <a class="btn-buy btn-secondary" href="#">Bookshop.org</a>
+        <a class="btn-buy btn-secondary" href="#">IndieBound</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>The Original Bug — by Sandy B. Patterson</p>
+</footer>
+
+</div>
+
+<script src="bg.js"></script>
+</body>
+</html>
