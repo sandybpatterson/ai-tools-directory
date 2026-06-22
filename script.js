@@ -77,7 +77,9 @@ searchInput.addEventListener("input", () => {
     const categoryText = section.querySelector("h2").textContent.toLowerCase();
 
     section.querySelectorAll(".card").forEach((card) => {
-      const text = card.textContent.toLowerCase();
+      const clone = card.cloneNode(true);
+      clone.querySelectorAll('.price-badge').forEach(el => el.remove());
+      const text = clone.textContent.toLowerCase();
       const matches = terms.length === 0 || terms.every(t => text.includes(t) || categoryText.includes(t));
       card.classList.toggle("hidden", !matches);
       if (matches) visibleCount++;
@@ -89,3 +91,27 @@ searchInput.addEventListener("input", () => {
 
   noResults.style.display = (terms.length > 0 && totalVisible === 0) ? "block" : "none";
 });
+
+fetch('pricing.json')
+  .then(r => r.json())
+  .then(({ tools }) => {
+    document.querySelectorAll('.card').forEach(card => {
+      if (!card.href) return;
+      const h3 = card.querySelector('h3');
+      if (!h3) return;
+      const name = Array.from(h3.childNodes)
+        .filter(n => n.nodeType === Node.TEXT_NODE)
+        .map(n => n.textContent.trim())
+        .filter(Boolean)
+        .join('');
+      const info = tools[name];
+      if (!info) return;
+      const badge = document.createElement('span');
+      badge.className = 'price-badge';
+      badge.textContent = info.rating;
+      badge.dataset.rating = info.rating;
+      badge.title = info.notes;
+      h3.appendChild(badge);
+    });
+  })
+  .catch(() => {});

@@ -211,6 +211,20 @@ main {
   color: #ffffff;
 }
 
+.price-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+.price-badge[data-rating="$"]     { color: #4ade80; }
+.price-badge[data-rating="$$"]    { color: #2dd4bf; }
+.price-badge[data-rating="$$$"]   { color: #facc15; }
+.price-badge[data-rating="$$$$"]  { color: #f97316; }
+.price-badge[data-rating="$$$$$"] { color: #f87171; }
+
 .card p {
   margin: 0;
   font-size: 0.88rem;
