@@ -231,14 +231,14 @@
       "source": "https://openai.com/chatgpt/pricing",
       "date_checked": "2026-06-21"
     },
-    "Flux": {
+    "Black Forest Labs": {
       "rating": "$",
       "free_tier": true,
       "free_tier_quality": "excellent",
       "lowest_paid_usd": 0,
       "lowest_paid_plan": "Free (open source)",
-      "notes": "Open-weight model, free to run locally. API access via providers like Replicate at ~$0.02-0.05/image.",
-      "source": "https://blackforestlabs.ai",
+      "notes": "FLUX models are open-weight and free to run locally. API access via providers like Replicate at ~$0.02-0.05/image.",
+      "source": "https://bfl.ai",
       "date_checked": "2026-06-21"
     },
     "Ideogram": {
