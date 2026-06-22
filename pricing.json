@@ -800,6 +800,146 @@
       "notes": "Free tier includes AI builder but shows Wix ads. Light $17/mo removes ads and adds custom domain.",
       "source": "https://www.wix.com/upgrade/website",
       "date_checked": "2026-06-21"
+    },
+    "Meta AI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 7.99,
+      "lowest_paid_plan": "Meta One Plus (testing in select regions)",
+      "notes": "Core product fully free; built into WhatsApp, Instagram, Facebook. Meta One paid tiers ($7.99/$19.99) being piloted as of June 2026.",
+      "source": "https://www.cnbc.com/2026/05/27/meta-testing-ai-subscription-services-cheapest-plan-at-7point99-a-month.html",
+      "date_checked": "2026-06-21"
+    },
+    "You.com": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier good for light use. Pro $20/mo for unlimited queries across research, code, and writing modes.",
+      "source": "https://you.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Kiro": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier = 50 credits/mo (~5-10 tasks). Pro $20/mo (1,000 credits). Replaces Amazon Q Developer (EOS Apr 2027).",
+      "source": "https://kiro.dev/pricing/",
+      "date_checked": "2026-06-21"
+    },
+    "Tabnine": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Dev",
+      "notes": "Free tier retired in 2024. Dev $12/mo, Enterprise $39/mo. Privacy-first; runs completions on-premise for regulated industries.",
+      "source": "https://www.tabnine.com/pricing/",
+      "date_checked": "2026-06-21"
+    },
+    "Leonardo AI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Apprentice",
+      "notes": "Free = 150 credits/day but images are public. $12/mo Apprentice for private generations and more credits.",
+      "source": "https://leonardo.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Krea": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 9,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free = 100 daily compute units. Basic $9/mo for 5,000 credits + commercial license.",
+      "source": "https://www.krea.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Wispr Flow": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 15,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free = 2,000 words/week. Pro $15/mo for unlimited dictation. 14-day Pro trial, no card required.",
+      "source": "https://wisprflow.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Lindy": {
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "400 credit trial only",
+      "lowest_paid_usd": 49.99,
+      "lowest_paid_plan": "Plus",
+      "notes": "400 credit trial; Plus $49.99/mo. Voice calls billed extra at $0.19/min. No permanent free tier.",
+      "source": "https://www.lindy.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "HeyGen": {
+      "rating": "$$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 29,
+      "lowest_paid_plan": "Creator",
+      "notes": "Free = 3 watermarked videos/mo (720p, 3 min max). Creator $29/mo for unlimited + 200 credits. 175+ language lip sync.",
+      "source": "https://www.heygen.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Synthesia": {
+      "rating": "$$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 29,
+      "lowest_paid_plan": "Starter",
+      "notes": "Free = 10 min/mo watermarked. Starter $29/mo (or $18/mo annual) removes logo. SOC 2 Type II, enterprise-grade.",
+      "source": "https://www.synthesia.io/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "D-ID": {
+      "rating": "$",
+      "free_tier": false,
+      "free_tier_quality": "14-day trial (3 min, watermarked)",
+      "lowest_paid_usd": 5.9,
+      "lowest_paid_plan": "Lite",
+      "notes": "No permanent free tier. Lite ~$5.90/mo — lowest-cost entry into AI avatar video.",
+      "source": "https://www.d-id.com/pricing/studio/",
+      "date_checked": "2026-06-21"
+    },
+    "Grammarly": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Pro (annual)",
+      "notes": "Free = grammar + spell check + 100 AI prompts/mo. Pro $12/mo (annual) or $30/mo (monthly). Works across all apps via browser extension.",
+      "source": "https://www.grammarly.com/plans",
+      "date_checked": "2026-06-21"
+    },
+    "Jasper": {
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "7-day trial (card required)",
+      "lowest_paid_usd": 39,
+      "lowest_paid_plan": "Creator (annual)",
+      "notes": "7-day trial requires credit card. Creator $39/mo annual or $49/mo monthly. Aimed at marketing teams.",
+      "source": "https://www.jasper.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Copy.ai": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 29,
+      "lowest_paid_plan": "Chat (annual)",
+      "notes": "Free = 2,000 words/mo, no card required. Chat $29/mo (annual) with 5 seats + 15K credits.",
+      "source": "https://www.copy.ai/prices",
+      "date_checked": "2026-06-21"
     }
   }
 }
