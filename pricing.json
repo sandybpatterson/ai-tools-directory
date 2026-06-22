@@ -232,14 +232,14 @@
       "date_checked": "2026-06-21"
     },
     "Black Forest Labs": {
-      "rating": "$",
-      "free_tier": true,
-      "free_tier_quality": "excellent",
-      "lowest_paid_usd": 0,
-      "lowest_paid_plan": "Free (open source)",
-      "notes": "FLUX models are open-weight and free to run locally. API access via providers like Replicate at ~$0.02-0.05/image.",
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": null,
+      "lowest_paid_plan": "Pay-per-use API credits",
+      "notes": "No free credits on bfl.ai — pay-per-use API pricing. FLUX models are open-weight so you can run them locally for free if you have the hardware.",
       "source": "https://bfl.ai",
-      "date_checked": "2026-06-21"
+      "date_checked": "2026-06-22"
     },
     "Ideogram": {
       "rating": "$",
