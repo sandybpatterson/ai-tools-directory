@@ -151,14 +151,14 @@
       "source": "https://github.com/features/copilot",
       "date_checked": "2026-06-21"
     },
-    "Windsurf": {
+    "Devin Desktop": {
       "rating": "$$",
       "free_tier": true,
       "free_tier_quality": "limited",
       "lowest_paid_usd": 20,
-      "lowest_paid_plan": "Pro (Devin Desktop)",
-      "notes": "Rebranded to Devin Desktop June 2026. Free tier limited. Pro $20/mo (raised from $15 in May 2026).",
-      "source": "https://windsurf.com/pricing",
+      "lowest_paid_plan": "Pro",
+      "notes": "Formerly Windsurf (Codeium), rebranded to Devin Desktop June 2026. Free tier limited. Pro $20/mo.",
+      "source": "https://devin.ai",
       "date_checked": "2026-06-21"
     },
     "Claude Code": {
