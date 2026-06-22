@@ -92,6 +92,8 @@ searchInput.addEventListener("input", () => {
   noResults.style.display = (terms.length > 0 && totalVisible === 0) ? "block" : "none";
 });
 
+const ratingOrder = { '$': 1, '$$': 2, '$$$': 3, '$$$$': 4, '$$$$$': 5 };
+
 fetch('pricing.json')
   .then(r => r.json())
   .then(({ tools }) => {
@@ -112,6 +114,16 @@ fetch('pricing.json')
       badge.dataset.rating = info.rating;
       badge.title = info.notes;
       h3.appendChild(badge);
+    });
+
+    document.querySelectorAll('.grid').forEach(grid => {
+      Array.from(grid.querySelectorAll('.card'))
+        .sort((a, b) => {
+          const ra = ratingOrder[a.querySelector('.price-badge')?.dataset.rating] ?? 99;
+          const rb = ratingOrder[b.querySelector('.price-badge')?.dataset.rating] ?? 99;
+          return ra - rb;
+        })
+        .forEach(card => grid.appendChild(card));
     });
   })
   .catch(() => {});
