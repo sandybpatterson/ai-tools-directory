@@ -1,0 +1,805 @@
+{
+  "_meta": {
+    "last_checked": "2026-06-21",
+    "methodology": "Rating based on entry-level paid tier cost per month. If the free tier is genuinely useful for most users, the tool earns $ regardless of paid tier. Scale: $ = free or <$10/mo, $$ = $10-25/mo, $$$ = $25-60/mo, $$$$ = $60-150/mo, $$$$$ = $150+/mo or enterprise-only.",
+    "rating_scale": {
+      "$": "Free or under $10/mo — or free tier alone is genuinely useful",
+      "$$": "$10–$25/mo entry paid tier",
+      "$$$": "$25–$60/mo entry paid tier",
+      "$$$$": "$60–$150/mo entry paid tier",
+      "$$$$$": "$150+/mo or enterprise-only pricing"
+    }
+  },
+  "tools": {
+    "ChatGPT": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Plus",
+      "notes": "Free tier is genuinely capable. Plus $20/mo adds GPT-4o, image gen, Deep Research.",
+      "source": "https://openai.com/chatgpt/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Claude": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier usable with daily limits. Pro $20/mo, Max $100/mo for heavy use.",
+      "source": "https://www.anthropic.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Gemini": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 19.99,
+      "lowest_paid_plan": "AI Pro",
+      "notes": "Free tier is strong. AI Pro $19.99/mo adds Gemini 3.1 Pro and Deep Research.",
+      "source": "https://one.google.com/about/plans",
+      "date_checked": "2026-06-21"
+    },
+    "Grok": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 22,
+      "lowest_paid_plan": "X Premium+",
+      "notes": "Basic Grok free on X. Full access via X Premium+ ~$22/mo or SuperGrok $30/mo.",
+      "source": "https://x.com/i/premium_sign_up",
+      "date_checked": "2026-06-21"
+    },
+    "DeepSeek": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free",
+      "notes": "Fully free web chat. API is extremely cheap ($0.14/$0.28 per 1M tokens). No meaningful paid consumer tier.",
+      "source": "https://chat.deepseek.com",
+      "date_checked": "2026-06-21"
+    },
+    "Le Chat (Mistral)": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 14.99,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier is solid. Pro $14.99/mo adds priority access and higher limits.",
+      "source": "https://mistral.ai/news/le-chat",
+      "date_checked": "2026-06-21"
+    },
+    "Perplexity": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier includes limited Pro searches per day. Pro $20/mo unlocks unlimited searches and deep research.",
+      "source": "https://www.perplexity.ai/pro",
+      "date_checked": "2026-06-21"
+    },
+    "ChatGPT Deep Research": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "ChatGPT Plus",
+      "notes": "Requires ChatGPT Plus ($20/mo) or higher. Not available on free tier.",
+      "source": "https://openai.com/chatgpt/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Gemini Deep Research": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 19.99,
+      "lowest_paid_plan": "Google AI Pro",
+      "notes": "Full Deep Research requires Google AI Pro $19.99/mo. Limited access on free tier.",
+      "source": "https://one.google.com/about/plans",
+      "date_checked": "2026-06-21"
+    },
+    "Elicit": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Plus",
+      "notes": "Free tier includes unlimited search across 138M+ papers. Plus $10/mo adds systematic review tools. Pro $49/mo.",
+      "source": "https://elicit.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Consensus": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 8.99,
+      "lowest_paid_plan": "Premium",
+      "notes": "Free tier includes 15 Pro messages/month. Premium $8.99/mo. Good for casual academic research.",
+      "source": "https://consensus.app/home/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Scite": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Individual",
+      "notes": "Free tier is very limited. Individual paid plan around $20/mo for full Smart Citations access.",
+      "source": "https://scite.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Cursor": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier limited. Pro $20/mo with unlimited Tab completions. Business $40/user/mo.",
+      "source": "https://www.cursor.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "GitHub Copilot": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier available (limited completions). Pro $10/mo with 1,500 credits. Max $100/mo for heavy use.",
+      "source": "https://github.com/features/copilot",
+      "date_checked": "2026-06-21"
+    },
+    "Windsurf": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Pro (Devin Desktop)",
+      "notes": "Rebranded to Devin Desktop June 2026. Free tier limited. Pro $20/mo (raised from $15 in May 2026).",
+      "source": "https://windsurf.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Claude Code": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 17,
+      "lowest_paid_plan": "Claude Pro (includes Code)",
+      "notes": "API-based pricing. Included in Claude Pro ~$17-20/mo. Heavy use billed per token (~$3/1M for Sonnet).",
+      "source": "https://www.anthropic.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Aider": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Fully open source and free. You pay only for the LLM API you connect (e.g. OpenAI, Anthropic).",
+      "source": "https://aider.chat",
+      "date_checked": "2026-06-21"
+    },
+    "Continue.dev": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Free and open source. Bring your own API key. No subscription cost for the tool itself.",
+      "source": "https://continue.dev",
+      "date_checked": "2026-06-21"
+    },
+    "Cline": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Free VS Code extension. Uses your own API key — you pay per token for whichever model you choose.",
+      "source": "https://cline.bot",
+      "date_checked": "2026-06-21"
+    },
+    "Google Flow": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 19.99,
+      "lowest_paid_plan": "Google AI Pro",
+      "notes": "Currently available through Google Labs. Deeper access via Google AI Pro $19.99/mo.",
+      "source": "https://labs.google/flow",
+      "date_checked": "2026-06-21"
+    },
+    "Midjourney": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Basic",
+      "notes": "No free tier. Basic $10/mo (3.3hr GPU), Standard $30/mo, Pro $60/mo (Stealth Mode), Mega $120/mo.",
+      "source": "https://www.midjourney.com/account",
+      "date_checked": "2026-06-21"
+    },
+    "ChatGPT Images": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "ChatGPT Plus",
+      "notes": "Image generation very limited on free tier. Full access with Plus $20/mo.",
+      "source": "https://openai.com/chatgpt/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Flux": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Open-weight model, free to run locally. API access via providers like Replicate at ~$0.02-0.05/image.",
+      "source": "https://blackforestlabs.ai",
+      "date_checked": "2026-06-21"
+    },
+    "Ideogram": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 8,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free tier includes ~10 slow generations per day. Paid plans start around $8/mo.",
+      "source": "https://ideogram.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Recraft": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier available with daily generation limits. Pro around $12/mo for more credits.",
+      "source": "https://www.recraft.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Stable Diffusion": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Fully open source and free to run locally. No subscription needed. Hardware is the only cost.",
+      "source": "https://stability.ai",
+      "date_checked": "2026-06-21"
+    },
+    "Microsoft Copilot": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Copilot Pro",
+      "notes": "Free tier includes DALL-E image generation and GPT-4o access. Pro $20/mo adds priority and Office integration.",
+      "source": "https://copilot.microsoft.com",
+      "date_checked": "2026-06-21"
+    },
+    "Veo": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 19.99,
+      "lowest_paid_plan": "Google AI Pro",
+      "notes": "Accessed via Google AI Studio (free) and Google Flow. Broader access with Google AI Pro $19.99/mo.",
+      "source": "https://deepmind.google/technologies/veo",
+      "date_checked": "2026-06-21"
+    },
+    "Runway": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Standard",
+      "notes": "Free tier has very limited credits. Standard $12/mo, Pro $28/mo, Unlimited $76/mo.",
+      "source": "https://runwayml.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Kling": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Standard",
+      "notes": "Free tier: 10 credits/day, watermark, 480p. Standard $10/mo for 660 credits, no watermark.",
+      "source": "https://klingai.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Hailuo": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free tier with watermark and daily caps. Paid plans start ~$10/mo.",
+      "source": "https://hailuoai.video",
+      "date_checked": "2026-06-21"
+    },
+    "Pika": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 8,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free tier available. Paid plans start at $8/mo.",
+      "source": "https://pika.art/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Luma Dream Machine": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 30,
+      "lowest_paid_plan": "Plus",
+      "notes": "Free tier limited. Plus $30/mo for 10,000 credits. Best per-video pricing at high volume.",
+      "source": "https://lumalabs.ai/dream-machine",
+      "date_checked": "2026-06-21"
+    },
+    "ElevenLabs": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 5,
+      "lowest_paid_plan": "Starter",
+      "notes": "Free tier includes 10k characters/mo. Starter $5/mo (30k chars, commercial use). Covers voice and music.",
+      "source": "https://elevenlabs.io/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Cartesia": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 5,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier: 10k credits, no commercial use. Pro $5/mo: 100k credits, commercial use, voice cloning.",
+      "source": "https://www.cartesia.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "PlayHT": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Creator",
+      "notes": "Free tier limited. Creator plan and above include instant voice cloning. Pricing starts ~$20/mo.",
+      "source": "https://play.ht/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "OpenAI Voice": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "ChatGPT Plus",
+      "notes": "Voice mode limited on free. Full access with ChatGPT Plus $20/mo. API pricing separate.",
+      "source": "https://openai.com/chatgpt/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "NotebookLM Audio Overviews": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free",
+      "notes": "Fully free via Google NotebookLM. No paid tier required for audio overviews.",
+      "source": "https://notebooklm.google.com",
+      "date_checked": "2026-06-21"
+    },
+    "Suno": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier: ~50 credits/day (~10 songs). Pro $10/mo. Strong free tier for casual use.",
+      "source": "https://suno.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Udio": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Standard",
+      "notes": "Free tier limited. Standard $10/mo. Commercial rights clarity is still being verified.",
+      "source": "https://www.udio.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Stable Audio": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 11.99,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier limited. Pro ~$11.99/mo.",
+      "source": "https://stableaudio.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Spotify AI DJ": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 9.99,
+      "lowest_paid_plan": "Spotify Premium",
+      "notes": "Available on both free and Premium Spotify. Premium $9.99/mo removes ads and adds offline listening.",
+      "source": "https://spotify.com/premium",
+      "date_checked": "2026-06-21"
+    },
+    "YouTube Music AI Playlists": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 10.99,
+      "lowest_paid_plan": "YouTube Music Premium",
+      "notes": "AI playlist feature available on free tier. Premium $10.99/mo removes ads and adds offline playback.",
+      "source": "https://music.youtube.com",
+      "date_checked": "2026-06-21"
+    },
+    "Soundraw": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Creator",
+      "notes": "No meaningful free tier. Paid plans $10-50/mo. Royalty-free license included.",
+      "source": "https://soundraw.io/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Epidemic Sound": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 15,
+      "lowest_paid_plan": "Personal",
+      "notes": "Free trial only. Personal plan ~$15/mo for creators. Commercial plans higher.",
+      "source": "https://www.epidemicsound.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Musicfy": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free tier limited. Paid plans start ~$10/mo.",
+      "source": "https://musicfy.lol/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Gamma": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 8,
+      "lowest_paid_plan": "Plus",
+      "notes": "Free tier: 400 AI credits (enough to start). Plus $8/mo (or $10 monthly), Pro $15/mo.",
+      "source": "https://gamma.app/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Tome": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Pro",
+      "notes": "NOTE: Tome shut down its Slides feature in April 2025. Currently limited functionality. Verify before recommending.",
+      "source": "https://tome.app",
+      "date_checked": "2026-06-21"
+    },
+    "Beautiful.ai": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 12,
+      "lowest_paid_plan": "Pro",
+      "notes": "No meaningful free tier. Pro $12/mo with unlimited AI presentations.",
+      "source": "https://www.beautiful.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Canva AI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 12.99,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier is very generous — most AI features accessible. Pro $12.99/mo removes limits and adds brand kits.",
+      "source": "https://www.canva.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Notion AI": {
+      "rating": "$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Business",
+      "notes": "Standalone $10 AI add-on retired May 2025. Full AI now bundled in Business $20/user/mo.",
+      "source": "https://www.notion.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "NotebookLM": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free",
+      "notes": "Fully free. Google offers NotebookLM with no paid tier requirement for core features.",
+      "source": "https://notebooklm.google.com",
+      "date_checked": "2026-06-21"
+    },
+    "Mem": {
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 14.99,
+      "lowest_paid_plan": "Pro",
+      "notes": "Previously $14.99/mo. Pricing may have changed with Mem 2.0 — verify directly.",
+      "source": "https://mem.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Obsidian AI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 10,
+      "lowest_paid_plan": "Obsidian Sync",
+      "notes": "Obsidian itself is free (even for commercial use). Sync $10/mo optional. AI plugins use your own API key — no tool subscription cost.",
+      "source": "https://obsidian.md/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Julius": {
+      "rating": "$$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 29.16,
+      "lowest_paid_plan": "Pro (annual)",
+      "notes": "Free: 15 messages/month. Pro ~$29/mo (annual). Targeted at data analysts and researchers.",
+      "source": "https://julius.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Hex": {
+      "rating": "$$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 36,
+      "lowest_paid_plan": "Starter (per editor)",
+      "notes": "Community (free) plan for individuals. Paid starts at $36/editor/mo. AI features and GPU cost extra.",
+      "source": "https://hex.tech/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Dataiku": {
+      "rating": "$$$$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": null,
+      "lowest_paid_plan": "Enterprise (custom)",
+      "notes": "Enterprise-only pricing, no public rates. Intended for large organizations. Contact sales.",
+      "source": "https://www.dataiku.com/product/get-started",
+      "date_checked": "2026-06-21"
+    },
+    "Tableau Pulse": {
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "none",
+      "lowest_paid_usd": 15,
+      "lowest_paid_plan": "Tableau Standard (includes Pulse)",
+      "notes": "Pulse is included free with Tableau Cloud. Tableau Standard starts at $15/user/mo, Creator at $75/user/mo.",
+      "source": "https://www.tableau.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "n8n": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 24,
+      "lowest_paid_plan": "Starter (cloud)",
+      "notes": "Self-hosted version is completely free. Cloud Starter €24/mo (~$26). Free self-hosted is the recommended starting point.",
+      "source": "https://n8n.io/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Make": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "good",
+      "lowest_paid_usd": 9,
+      "lowest_paid_plan": "Core",
+      "notes": "Free tier: 1,000 ops/month. Core $9/mo for 10,000 ops — very competitive vs Zapier.",
+      "source": "https://www.make.com/en/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Zapier": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 19.99,
+      "lowest_paid_plan": "Professional",
+      "notes": "Free: 100 tasks/month. Professional $19.99/mo for 750 tasks. Note: each step in a multi-step Zap counts separately.",
+      "source": "https://zapier.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "OpenAI Agents": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (SDK)",
+      "notes": "The Agents SDK/framework is free and open source. You pay only for the OpenAI API tokens your agents consume.",
+      "source": "https://platform.openai.com/docs/guides/agents",
+      "date_checked": "2026-06-21"
+    },
+    "LangGraph": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 99,
+      "lowest_paid_plan": "LangGraph Platform Pro",
+      "notes": "Open source (MIT), fully free to use. LangGraph Platform hosted service $99/mo + compute. Most users self-host for free.",
+      "source": "https://www.langchain.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "CrewAI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 99,
+      "lowest_paid_plan": "CrewAI+",
+      "notes": "Open source (MIT), fully free to use. CrewAI+ hosted/enterprise $99/mo. Framework itself costs nothing.",
+      "source": "https://www.crewai.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Ollama": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Completely free and open source. Runs models locally on your hardware. No subscription.",
+      "source": "https://ollama.com",
+      "date_checked": "2026-06-21"
+    },
+    "LM Studio": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free",
+      "notes": "Completely free desktop app for running local models. No subscription.",
+      "source": "https://lmstudio.ai",
+      "date_checked": "2026-06-21"
+    },
+    "Open WebUI": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (self-hosted)",
+      "notes": "Free and open source. Self-hosted. Only cost is your own server/hardware.",
+      "source": "https://openwebui.com",
+      "date_checked": "2026-06-21"
+    },
+    "Jan": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 0,
+      "lowest_paid_plan": "Free (open source)",
+      "notes": "Completely free and open source offline AI app. No subscription or API key needed.",
+      "source": "https://jan.ai",
+      "date_checked": "2026-06-21"
+    },
+    "Fathom": {
+      "rating": "$",
+      "free_tier": true,
+      "free_tier_quality": "excellent",
+      "lowest_paid_usd": 19,
+      "lowest_paid_plan": "Premium",
+      "notes": "Most generous free tier in the category — unlimited recordings, 5 AI summaries/month. Premium $19/mo for unlimited AI summaries.",
+      "source": "https://fathom.video/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Fireflies": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 18,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier limited to 800 mins storage and 3 AI summaries. Pro $18/user/mo.",
+      "source": "https://fireflies.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Otter": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 16.99,
+      "lowest_paid_plan": "Pro",
+      "notes": "Free tier limited. Pro $16.99/mo with more transcription minutes and AI features.",
+      "source": "https://otter.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Granola": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 14,
+      "lowest_paid_plan": "Starter",
+      "notes": "Free basic plan with limited meeting history. Starter $14/user/mo for full features.",
+      "source": "https://www.granola.ai/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Adobe Firefly": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 9.99,
+      "lowest_paid_plan": "Firefly Standard",
+      "notes": "Free tier with limited monthly generative credits. Standard $9.99/mo (2,000 credits), Pro $19.99/mo.",
+      "source": "https://www.adobe.com/products/firefly/plans.html",
+      "date_checked": "2026-06-21"
+    },
+    "Figma AI": {
+      "rating": "$$$",
+      "free_tier": false,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 15,
+      "lowest_paid_plan": "Professional",
+      "notes": "AI features in beta, included with Figma Professional $15/editor/mo. AI credit limits vary by plan.",
+      "source": "https://www.figma.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Lovable": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 25,
+      "lowest_paid_plan": "Starter",
+      "notes": "Free tier limited. Starter ~$25/mo. Account-based pricing (not per-seat) makes it better value for teams.",
+      "source": "https://lovable.dev/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Bolt": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 25,
+      "lowest_paid_plan": "Basic",
+      "notes": "Free tier with limited tokens. Basic ~$25/mo. Supports more frameworks than most competitors.",
+      "source": "https://bolt.new/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "v0": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Premium",
+      "notes": "Free tier with limited generations. Premium $20/mo. Specializes in production-quality React/Tailwind components.",
+      "source": "https://v0.dev/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Replit": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 20,
+      "lowest_paid_plan": "Core",
+      "notes": "Free tier limited. Core $20-25/mo includes AI Agent access and $25 in usage credits.",
+      "source": "https://replit.com/pricing",
+      "date_checked": "2026-06-21"
+    },
+    "Wix AI": {
+      "rating": "$$",
+      "free_tier": true,
+      "free_tier_quality": "limited",
+      "lowest_paid_usd": 17,
+      "lowest_paid_plan": "Light",
+      "notes": "Free tier includes AI builder but shows Wix ads. Light $17/mo removes ads and adds custom domain.",
+      "source": "https://www.wix.com/upgrade/website",
+      "date_checked": "2026-06-21"
+    }
+  }
+}
