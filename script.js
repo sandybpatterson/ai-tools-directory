@@ -57,7 +57,7 @@ const searchInput = document.getElementById("search");
 const noResults = document.createElement("p");
 noResults.id = "no-results";
 noResults.textContent = "No tools found — try a different search.";
-noResults.style.cssText = "display:none; text-align:center; color:#5a5e6b; padding:64px 0; font-size:0.95rem;";
+noResults.style.cssText = "display:none; text-align:center; color:#666; padding:64px 0; font-size:0.95rem;";
 document.querySelector("main").appendChild(noResults);
 
 searchInput.addEventListener("keydown", (e) => {

@@ -4,9 +4,9 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background: #010308;
-  color: #e6e6e6;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: #0a0a0a;
+  color: #e8e8e8;
 }
 
 #bg-canvas {
@@ -31,11 +31,12 @@ header {
 header h1 {
   margin: 0 0 8px;
   font-size: 2.2rem;
+  color: #f0f0f0;
 }
 
 .subtitle {
   margin: 0 0 20px;
-  color: #a0a4b0;
+  color: #888;
 }
 
 #search {
@@ -43,15 +44,16 @@ header h1 {
   max-width: 420px;
   padding: 10px 16px;
   font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #2c2f3a;
-  background: #1a1d27;
-  color: #e6e6e6;
+  font-family: Georgia, serif;
+  border-radius: 999px;
+  border: 1px solid #1e1e1e;
+  background: #111;
+  color: #e8e8e8;
 }
 
 #search:focus {
   outline: none;
-  border-color: #6c8cff;
+  border-color: #c9a84c;
 }
 
 #shelf-nav {
@@ -107,7 +109,7 @@ header h1 {
   justify-content: center;
   gap: 8px;
   padding: 8px 24px;
-  background: rgba(8, 10, 18, 0.55);
+  background: rgba(10, 10, 10, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -118,23 +120,25 @@ header h1 {
   border-radius: 999px;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.10);
-  color: #a0a4b0;
+  color: #888;
   text-decoration: none;
-  font-size: 0.82rem;
-  letter-spacing: 0.03em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
 }
 
 #page-nav a:hover {
-  border-color: rgba(255,255,255,0.30);
-  color: #e6e6e6;
+  border-color: #c9a84c44;
+  color: #c9a84c;
   background: rgba(255,255,255,0.05);
 }
 
 #page-nav a.active {
-  background: #6c8cff;
-  border-color: #6c8cff;
-  color: #0f1115;
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0a0a0a;
 }
 
 #cat-nav {
@@ -145,7 +149,7 @@ header h1 {
   gap: 8px;
   overflow-x: auto;
   padding: 12px 24px;
-  background: rgba(8, 10, 18, 0.55);
+  background: rgba(10, 10, 10, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -162,22 +166,24 @@ header h1 {
   border-radius: 999px;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.10);
-  color: #a0a4b0;
+  color: #888;
   text-decoration: none;
-  font-size: 0.82rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
 }
 
 #cat-nav a:hover {
-  border-color: rgba(255,255,255,0.30);
-  color: #e6e6e6;
+  border-color: #c9a84c44;
+  color: #c9a84c;
   background: rgba(255,255,255,0.05);
 }
 
 #cat-nav a.active {
-  background: #6c8cff;
-  border-color: #6c8cff;
-  color: #0f1115;
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0a0a0a;
 }
 
 main {
@@ -187,24 +193,6 @@ main {
   scroll-margin-top: 0;
 }
 
-/* Per-category accent colors */
-#general       { --accent: #6c8cff; }
-#research      { --accent: #2dd4bf; }
-#coding        { --accent: #4ade80; }
-#image         { --accent: #c084fc; }
-#video         { --accent: #f97316; }
-#voice         { --accent: #facc15; }
-#music         { --accent: #f472b6; }
-#presentations { --accent: #fb923c; }
-#notes         { --accent: #a3e635; }
-#data          { --accent: #38bdf8; }
-#agents        { --accent: #818cf8; }
-#local         { --accent: #94a3b8; }
-#meetings      { --accent: #34d399; }
-#design        { --accent: #e879f9; }
-#webbuild      { --accent: #0ea5e9; }
-#writing       { --accent: #8b5cf6; }
-
 .category {
   scroll-margin-top: 90px;
 }
@@ -212,8 +200,9 @@ main {
 .category h2 {
   margin: 36px 0 16px;
   font-size: 1.3rem;
-  border-bottom: 1px solid #262a36;
-  border-left: 3px solid var(--accent, #6c8cff);
+  color: #f0f0f0;
+  border-bottom: 1px solid #1e1e1e;
+  border-left: 3px solid #c9a84c;
   padding-bottom: 8px;
   padding-left: 10px;
 }
@@ -228,8 +217,8 @@ main {
   display: block;
   padding: 16px;
   border-radius: 10px;
-  background: #1a1d27;
-  border: 1px solid #262a36;
+  background: #111;
+  border: 1px solid #1e1e1e;
   text-decoration: none;
   color: inherit;
   transition: transform 0.12s ease, border-color 0.12s ease;
@@ -237,7 +226,7 @@ main {
 
 .card:hover {
   transform: translateY(-2px);
-  border-color: var(--accent, #6c8cff);
+  border-color: #c9a84c;
 }
 
 .card .favicon {
@@ -254,7 +243,7 @@ main {
   gap: 8px;
   margin: 0 0 6px;
   font-size: 1.05rem;
-  color: #ffffff;
+  color: #f0f0f0;
 }
 
 .price-badge {
@@ -263,18 +252,18 @@ main {
   letter-spacing: 0.04em;
   margin-left: auto;
   flex-shrink: 0;
-  opacity: 0.85;
+  opacity: 0.9;
 }
-.price-badge[data-rating="$"]     { color: #4ade80; }
-.price-badge[data-rating="$$"]    { color: #2dd4bf; }
-.price-badge[data-rating="$$$"]   { color: #facc15; }
-.price-badge[data-rating="$$$$"]  { color: #f97316; }
-.price-badge[data-rating="$$$$$"] { color: #f87171; }
+.price-badge[data-rating="$"]     { color: #8fbf6f; }
+.price-badge[data-rating="$$"]    { color: #5fb8a8; }
+.price-badge[data-rating="$$$"]   { color: #d6b656; }
+.price-badge[data-rating="$$$$"]  { color: #d98a4a; }
+.price-badge[data-rating="$$$$$"] { color: #c26b6b; }
 
 .card p {
   margin: 0;
   font-size: 0.88rem;
-  color: #a0a4b0;
+  color: #888;
 }
 
 .category.hidden {
@@ -288,28 +277,33 @@ main {
 footer {
   text-align: center;
   padding: 24px;
-  color: #5a5e6b;
-  font-size: 0.85rem;
+  color: #555;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .pricing-disclaimer {
   max-width: 620px;
   margin: 0 auto 32px;
   padding: 24px 28px;
-  background: #1a1d27;
-  border: 1px solid #262a36;
+  background: #111;
+  border: 1px solid #1e1e1e;
   border-radius: 10px;
   text-align: left;
-  color: #a0a4b0;
+  color: #888;
   font-size: 0.85rem;
   line-height: 1.6;
 }
 
 .pricing-disclaimer h3 {
   margin: 0 0 10px;
-  font-size: 0.9rem;
-  color: #e6e6e6;
-  letter-spacing: 0.03em;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a84c;
 }
 
 .pricing-disclaimer p {
@@ -317,7 +311,7 @@ footer {
 }
 
 .pricing-disclaimer strong {
-  color: #e6e6e6;
+  color: #e8e8e8;
 }
 
 .rating-key {
@@ -336,8 +330,10 @@ footer {
 
 .disclaimer-meta {
   margin: 14px 0 0 !important;
-  font-size: 0.8rem;
-  color: #5a5e6b;
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: #555;
 }
 
 .footer-note {

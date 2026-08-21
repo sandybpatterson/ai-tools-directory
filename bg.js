@@ -72,17 +72,17 @@ void main(){
 
   float ring = exp(-pow((dCp - pingR) * 28.0, 2.0)) * clkLife;
 
-  vec3 cyan = vec3(0.40, 0.95, 1.05);
-  vec3 dark = vec3(0.004, 0.012, 0.022);
+  vec3 gold = vec3(0.79, 0.66, 0.30);
+  vec3 dark = vec3(0.039, 0.039, 0.039);
 
   vec3 col = dark;
-  col += cyan * (line*0.4 + lineM*0.8) * reveal;
-  col += cyan * ring * 1.8;
+  col += gold * (line*0.4 + lineM*0.8) * reveal;
+  col += gold * ring * 1.8;
 
   float md   = length(p - m);
   float wake = exp(-md*md * 4.0);
-  col += cyan * wake * 0.15;
-  col += cyan * line * wake * 1.2;
+  col += gold * wake * 0.15;
+  col += gold * line * wake * 1.2;
 
   col += (hash21(gl_FragCoord.xy + floor(u_time*30.0)) - 0.5) * 0.018;
   col *= 1.0 - 0.38*length((uv - 0.5)*1.25);
@@ -136,27 +136,27 @@ void main(){
     'position:fixed', 'bottom:20px', 'right:20px', 'z-index:100',
     'padding:6px 14px', 'border-radius:999px',
     'background:transparent', 'border:1px solid rgba(255,255,255,0.12)',
-    'color:#a0a4b0', 'font-size:0.75rem', 'letter-spacing:0.04em',
-    'cursor:pointer', 'font-family:inherit',
+    'color:#888', 'font-size:0.72rem', 'letter-spacing:0.08em', 'text-transform:uppercase',
+    'cursor:pointer', "font-family:'Courier New',monospace",
     'backdrop-filter:blur(12px)', '-webkit-backdrop-filter:blur(12px)',
     'transition:color .2s,border-color .2s'
   ].join(';');
-  btn.addEventListener('mouseenter', () => btn.style.color = '#e6e6e6');
-  btn.addEventListener('mouseleave', () => btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff');
+  btn.addEventListener('mouseenter', () => btn.style.color = '#e8e8e8');
+  btn.addEventListener('mouseleave', () => btn.style.color = pulseOn ? '#888' : '#c9a84c');
   btn.addEventListener('click', () => {
     pulseOn = !pulseOn;
     localStorage.setItem('pulseOn', pulseOn);
     btn.textContent = pulseOn ? 'Disable Pulse' : 'Enable Pulse';
-    btn.style.color = pulseOn ? '#a0a4b0' : '#6c8cff';
-    btn.style.borderColor = pulseOn ? 'rgba(255,255,255,0.12)' : '#6c8cff';
+    btn.style.color = pulseOn ? '#888' : '#c9a84c';
+    btn.style.borderColor = pulseOn ? 'rgba(255,255,255,0.12)' : '#c9a84c';
     if (!pulseOn) clickTime = -99;
   });
   // Apply saved state to button appearance on load
   if (!pulseOn) {
     clickTime = -99;
     btn.textContent = 'Enable Pulse';
-    btn.style.color = '#6c8cff';
-    btn.style.borderColor = '#6c8cff';
+    btn.style.color = '#c9a84c';
+    btn.style.borderColor = '#c9a84c';
   }
   document.body.appendChild(btn);
 

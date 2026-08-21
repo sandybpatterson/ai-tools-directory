@@ -8,14 +8,6 @@
 <style>
   #cat-nav { justify-content: center; }
 
-  /* Per-category accent colors for FAQ sections */
-  #what-is-ai   { --accent: #c084fc; }
-  #behavior     { --accent: #f97316; }
-  #bias         { --accent: #2dd4bf; }
-  #work         { --accent: #4ade80; }
-  #how-to-use   { --accent: #6c8cff; }
-  #bigger       { --accent: #f472b6; }
-
   .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -25,34 +17,35 @@
   .faq-card {
     padding: 20px;
     border-radius: 10px;
-    background: #1a1d27;
-    border: 1px solid #262a36;
+    background: #111;
+    border: 1px solid #1e1e1e;
     transition: border-color 0.12s ease;
   }
 
   .faq-card:hover {
-    border-color: var(--accent, #6c8cff);
+    border-color: #c9a84c;
   }
 
   .faq-card h3 {
     margin: 0 0 10px;
     font-size: 1rem;
-    color: var(--accent, #ffffff);
+    color: #c9a84c;
     line-height: 1.4;
   }
 
   .faq-card p {
     margin: 0;
     font-size: 0.88rem;
-    color: #a0a4b0;
+    color: #888;
     line-height: 1.6;
   }
 
   .byline {
     margin: 0 0 20px;
-    color: #5a5e6b;
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
+    color: #666;
+    font-family: 'Courier New', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
   }
 </style>
@@ -203,7 +196,7 @@
   <h2>The Bigger Picture</h2>
   <div class="faq-grid">
     <div class="card faq-card">
-      <h3>Why does this newsletter compare AI to human psychology instead of just explaining the technology?</h3>
+      <h3>Why does this book compare AI to human psychology instead of just explaining the technology?</h3>
       <p>Because the technology isn't the interesting part. The mirror is. Every flaw showing up in AI right now already existed in us first. Understanding the bias in yourself is the fastest way to understand what's actually happening inside the machine.</p>
     </div>
     <div class="card faq-card">
