@@ -61,6 +61,8 @@ header h1 {
   top: 0;
   z-index: 12;
   display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
   justify-content: space-between;
   align-items: center;
   padding: 16px 40px;
@@ -80,6 +82,8 @@ header h1 {
 
 #shelf-nav .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 8px;
 }
 
@@ -101,49 +105,9 @@ header h1 {
   border-color: #c9a84c44;
 }
 
-#page-nav {
-  position: sticky;
-  top: 48px;
-  z-index: 11;
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 24px;
-  background: rgba(10, 10, 10, 0.55);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-
-#page-nav a {
-  padding: 5px 16px;
-  border-radius: 999px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.10);
-  color: #888;
-  text-decoration: none;
-  font-family: 'Courier New', monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
-}
-
-#page-nav a:hover {
-  border-color: #c9a84c44;
-  color: #c9a84c;
-  background: rgba(255,255,255,0.05);
-}
-
-#page-nav a.active {
-  background: #c9a84c;
-  border-color: #c9a84c;
-  color: #0a0a0a;
-}
-
 #cat-nav {
   position: sticky;
-  top: 88px;
+  top: 57px;
   z-index: 10;
   display: flex;
   gap: 8px;
@@ -162,28 +126,26 @@ header h1 {
 
 #cat-nav a {
   flex-shrink: 0;
-  padding: 6px 14px;
+  padding: 5px 14px;
   border-radius: 999px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.10);
+  border: 1px solid transparent;
   color: #888;
   text-decoration: none;
   font-family: 'Courier New', monospace;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
-  transition: background 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 #cat-nav a:hover {
   border-color: #c9a84c44;
   color: #c9a84c;
-  background: rgba(255,255,255,0.05);
 }
 
 #cat-nav a.active {
-  background: #c9a84c;
-  border-color: #c9a84c;
-  color: #0a0a0a;
+  color: #c9a84c;
+  border-color: #c9a84c44;
 }
 
 main {

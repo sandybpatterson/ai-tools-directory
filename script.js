@@ -1,10 +1,10 @@
 const catNav = document.getElementById("cat-nav");
-const pageNav = document.getElementById("page-nav");
+const shelfNav = document.getElementById("shelf-nav");
 const sections = document.querySelectorAll(".category");
 
 function updateNavOffset() {
-  if (!pageNav || !catNav) return;
-  const offset = pageNav.offsetHeight;
+  if (!shelfNav || !catNav) return;
+  const offset = shelfNav.offsetHeight;
   catNav.style.top = offset + "px";
   sections.forEach(s => {
     s.style.scrollMarginTop = (offset + catNav.offsetHeight + 8) + "px";
