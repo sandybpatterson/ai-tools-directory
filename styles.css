@@ -9,14 +9,6 @@ body {
   color: #e8e8e8;
 }
 
-#bg-canvas {
-  position: fixed;
-  inset: 0;
-  display: block;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .page-content {
   position: relative;
   z-index: 1;
