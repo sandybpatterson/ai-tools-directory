@@ -97,6 +97,16 @@ header h1 {
   border-color: #c9a84c44;
 }
 
+#shelf-nav .nav-links a.active {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0a0a0a;
+}
+
+#shelf-nav .nav-links a.active:hover {
+  color: #0a0a0a;
+}
+
 #cat-nav {
   position: sticky;
   top: 57px;
@@ -154,7 +164,7 @@ main {
 .category h2 {
   margin: 36px 0 16px;
   font-size: 1.3rem;
-  color: #f0f0f0;
+  color: #c9a84c;
   border-bottom: 1px solid #1e1e1e;
   border-left: 3px solid #c9a84c;
   padding-bottom: 8px;
